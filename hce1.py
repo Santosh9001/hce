@@ -123,4 +123,10 @@ print(p3.x, p3.y)  # Output: 4 6
 # post -> body params 
 
 # python -m pip/pip3 install djangorestframework
-# go into a specific app -> create serializers.py file 
+
+# git init 
+# git add remote ...
+# git add .
+# git commit -m "project creation"
+# git branch 
+# git push -u origin main
