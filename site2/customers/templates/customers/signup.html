@@ -1,0 +1,41 @@
+<!-- signup.html -->
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Signup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    
+    <form id="signup-form" hx-post="{% url 'signup' %}" hx-target="#customer-details" method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <br/>
+        <button type="submit">Signup</button>
+    </form>
+    <div id="customer-details" hx-swap="outerHTML">
+        {% include 'customers/customer_details.html' %}
+    </div>
+    <script src="https://unpkg.com/htmx.org@1.5.0/dist/htmx.js"></script>
+</body>
+<!-- signup.html -->
+<script>
+    document.getElementById('signup-form').addEventListener('htmx:success', function(event) {
+        var details = event.detail.xhr.response;
+        document.getElementById('customer-details').innerHTML = details;
+    });
+</script>
+<script>
+     document.getElementById('search-user').addEventListener('htmx:success', function(event) {
+        var details = event.detail.xhr.response;
+        document.getElementById('customer-details').innerHTML = details;
+    });
+</script>
+
+</html>

@@ -1,0 +1,95 @@
+/* static/css/styles.css */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5; /* Light grey background */
+    color: #1c1e21; /* Dark text color */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff; /* White background for the form */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #1877f2; /* Facebook blue */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    margin: 20px 20px 20px 20px;
+    width: 50%;
+    padding: 20px 20px;
+    /* border: 1px solid #270644; */
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="number"],
+form button {
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 15px; /* Increased spacing for better separation */
+    border: 1px solid #dddfe2;
+    border-radius: 4px;
+    transition: all 0.3s ease; /* Smooth transition for focus effect */
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="number"]:focus,
+form input[type="password"]:focus {
+    border-color: #1877f2; /* Facebook blue */
+    outline: none;
+    box-shadow: 0 0 5px rgba(24, 119, 242, 0.5);
+}
+
+form button {
+    background-color: #1877f2; /* Facebook blue */
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #165eae;
+}
+
+table {
+    margin: 30px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px; /* Slightly larger font size for readability */
+}
+
+table, th, td {
+    border: 1px solid #dddfe2;
+}
+
+th, td {
+    padding: 12px; /* Increased padding for better spacing */
+    text-align: left;
+}
+
+th {
+    background-color: #f5f6f7; /* Light grey for table header */
+}
+
+tr:nth-child(even) {
+    background-color: #f5f6f7;
+}
+
+tr:hover {
+    background-color: #e9ebee; /* Slight hover effect */
+}
