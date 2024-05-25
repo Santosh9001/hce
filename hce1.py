@@ -125,8 +125,11 @@ print(p3.x, p3.y)  # Output: 4 6
 # python -m pip/pip3 install djangorestframework
 
 # git init 
+# git checkout -b "branch_name"
+# changes 
 # git add .
 # git commit -m "project creation"
 # git branch 
-# git push -u origin main
+# git push origin branch_name
+# git push -u origin main ( first time)
 # git checkout -b "yourname"
