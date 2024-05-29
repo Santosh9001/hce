@@ -1,17 +1,17 @@
 <!-- products/templates/products/product_list.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
-</head>
-<body>
-    <h1>Products</h1>
-    <ul>
+<main>
+    <h1>Product Lists</h1>
+    <div class="product-grid">
         {% for product in products %}
-            <li>{{ product.name }} - ${{ product.price }}</li>
+            <div class="product-card">
+                <!-- <img src="path/to/image.jpg" alt="Product Image"> -->
+                <h2>{{ product.name }}</h2>
+                <p>${{ product.price }}</p>
+                <form method="post" action="{% url 'add_to_cart' product.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
+            </div>
         {% endfor %}
-    </ul>
-</body>
-</html>
+    </div>
+</main>

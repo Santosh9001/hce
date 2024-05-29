@@ -65,31 +65,6 @@ form button:hover {
     background-color: #165eae;
 }
 
-table {
-    margin: 30px;
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    font-size: 16px; /* Slightly larger font size for readability */
-}
-
-table, th, td {
-    border: 1px solid #dddfe2;
-}
-
-th, td {
-    padding: 12px; /* Increased padding for better spacing */
-    text-align: left;
-}
-
-th {
-    background-color: #f5f6f7; /* Light grey for table header */
-}
-
-tr:nth-child(even) {
-    background-color: #f5f6f7;
-}
-
-tr:hover {
-    background-color: #e9ebee; /* Slight hover effect */
+.login{
+    background-color: green;
 }

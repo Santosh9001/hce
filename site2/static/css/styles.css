@@ -1,90 +1,118 @@
-/* static/css/styles.css */
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and header styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f0f2f5; /* Light grey background */
-    color: #1c1e21; /* Dark text color */
-    margin: 0;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+header, footer {
+    background-color: #f7cccc;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+/* Main content styles */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Product grid styles */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Product card styles */
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+}
+
+.product-card h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.product-card p {
+    color: #888;
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.add-to-cart {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #0056b3;
+}
+
+/* Add to your existing CSS file */
+.badge {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 6px;
+    font-size: 8px;
+    position: absolute;
+    right: 35px;
+    top: 20px;
+}
+
+.cart{
+    height: 30px;
+}
+
+/* Add to your existing CSS file */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
     padding: 0;
 }
 
-.container {
-    width: 100%;
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #ffffff; /* White background for the form */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+.navbar li {
+    margin-right: 20px;
 }
 
-h1 {
-    font-size: 24px;
-    color: #1877f2; /* Facebook blue */
-    text-align: center;
-    margin-bottom: 20px;
+.navbar li:last-child {
+    margin-right: 0;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form input[type="text"],
-form input[type="email"],
-form input[type="password"],
-form button {
-    font-size: 16px;
-    padding: 10px;
-    margin-bottom: 15px; /* Increased spacing for better separation */
-    border: 1px solid #dddfe2;
-    border-radius: 4px;
-    transition: all 0.3s ease; /* Smooth transition for focus effect */
-}
-
-form input[type="text"]:focus,
-form input[type="email"]:focus,
-form input[type="password"]:focus {
-    border-color: #1877f2; /* Facebook blue */
-    outline: none;
-    box-shadow: 0 0 5px rgba(24, 119, 242, 0.5);
-}
-
-form button {
-    background-color: #1877f2; /* Facebook blue */
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-form button:hover {
-    background-color: #165eae;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    font-size: 16px; /* Slightly larger font size for readability */
-}
-
-table, th, td {
-    border: 1px solid #dddfe2;
-}
-
-th, td {
-    padding: 12px; /* Increased padding for better spacing */
-    text-align: left;
-}
-
-th {
-    background-color: #f5f6f7; /* Light grey for table header */
-}
-
-tr:nth-child(even) {
-    background-color: #f5f6f7;
-}
-
-tr:hover {
-    background-color: #e9ebee; /* Slight hover effect */
-}

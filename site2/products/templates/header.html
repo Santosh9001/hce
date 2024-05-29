@@ -1,0 +1,20 @@
+<!-- templates/header.html -->
+<header>
+    <nav class="navbar">
+        {% load static %}
+            <div>
+            <a href="/categories/">Home</a>
+            <a href="/customers/signup/">Sign Up</a>
+            </div>
+            <!-- Wrap the entire link with an HTMX trigger -->
+                <a href="/products/cart/" hx-get="/cart/" hx-target="#cart-icon" hx-swap="outerHTML">
+                    <!-- Include the cart icon image -->
+                    <img src="{% static 'media/cart.png' %}" alt="Cart" class="cart">
+                    <!-- Include the badge with HTMX -->
+                    <sup id="cart-icon">{% include 'products/cart_badge.html' %}</sup>
+                </a>
+            </div>
+            <!-- Add more navigation items here -->
+
+    </nav>
+</header>
