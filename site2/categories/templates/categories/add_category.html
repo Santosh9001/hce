@@ -1,0 +1,8 @@
+<form id="signup-form" hx-post="{% url 'category' %}" hx-target="#customer-details" method="post">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <br/>
+    <button type="submit">Add Categories</button>
+</form>
