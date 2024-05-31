@@ -3,7 +3,7 @@ from django.urls import path
 from . import views
 from django.views.generic import TemplateView
 from .views import IndexView
-from .views import cart_view,add_to_cart
+from .views import cart_view,add_to_cart,add_product
 
 urlpatterns = [
     path('show/', views.product_list, name='product_list'),  # URL for product list view
@@ -15,4 +15,5 @@ urlpatterns = [
     path('',IndexView.as_view(),name='home'),
     path('cart/', cart_view, name='cart'),
     path('add-to-cart/<int:product_id>/', add_to_cart, name='add_to_cart'),
+    path('add-product/', add_product, name='add_product'),
 ]

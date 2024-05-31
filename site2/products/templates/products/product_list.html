@@ -4,7 +4,9 @@
     <div class="product-grid">
         {% for product in products %}
             <div class="product-card">
-                <!-- <img src="path/to/image.jpg" alt="Product Image"> -->
+                {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                {% endif %}
                 <h2>{{ product.name }}</h2>
                 <p>${{ product.price }}</p>
                 <form method="post" action="{% url 'add_to_cart' product.id %}">

@@ -22,6 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-v+g6fnk$77qx*c%ryw9q=qkp%e+j%&3cqa#hjxs=3z2c65%#gm'
 
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -125,7 +127,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [

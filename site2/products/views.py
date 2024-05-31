@@ -1,8 +1,10 @@
 # products/views.py
 from typing import Any
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import redirect, render, get_object_or_404
 from rest_framework import generics
 from rest_framework.filters import SearchFilter
+
+from .forms import ProductForm
 from .models import CartItem, Product, Cart
 from .serializers import ProductSerializer
 from django.views.generic import TemplateView
@@ -53,3 +55,15 @@ def add_to_cart(request, product_id):
     
     cart_items_count = cart.items.count()
     return JsonResponse({'cart_items_count': cart_items_count})
+
+
+@login_required
+def add_product(request):
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('products/product_list')  # Redirect to the product list view
+    else:
+        form = ProductForm()
+    return render(request, 'products/add_product.html', {'form': form})
